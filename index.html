@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+      <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- FIREBASE CONFIG -->
+        <script type="module"src="config.js"></script>
+
+        <script type="module" src="main.js"></script>
+    
+        <script src="script.js" defer></script>
+        
+
+
+</head>
+<body>
+    <div class = "sidebar">
+        <div class="top">
+            <div class="logo">
+                <img src="logo.png" alt="Logo" class="app-icon">
+                <span class="title">Mother Nature</span>
+            </div>
+            <i class="bi bi-list" id="btn"></i>
+        </div>
+
+        <ul>
+            <li>
+                <a href="https://curtislow777.github.io/MotherNature/">
+                    <i class="bi bi-app-indicator"></i>
+                    <span class="nav-item">Dashboard</span>
+                </a>
+            </li>
+            <!-- <li>
+                <a href="/activity.html">
+                    <i class="bi bi-clock"></i>
+                    <span class="nav-item">Activity</span>
+                </a>
+            </li> -->
+            <li>
+                <a href="https://curtislow777.github.io/MotherNature/players.html">
+                    <i class="bi bi-people"></i>
+                    <span class="nav-item">Players</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="main-content">
+        <div class="left-content">
+            <div class="container">
+                <div class="col py-3 px-3">
+                    <div class="container">
+                        <h1 class="text-black text-lg font-bold">Dashboard</h1>
+
+                        <!-- LINE CHART FOR USER TRAFFIC  -->
+                        <div class="card mb-4 position-relative">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3"> Number of Users created </h5>
+                                <div class="user-container">
+                                    <canvas id="lineChart" width="300" height="70"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    
+                                  
+                        <div class="activity-tab">
+                            <br></br>
+                            <h5 class="card-title mb-3 text-black">Activity Log</h5>
+                            <ul  class="list-group"></ul>
+                            <div class="card mb-4 position-relative">
+                                <div id="activityLog" class="card-body">
+                                </div>
+                            </div>
+                            </div>
+                        </div>  
+                    
+                    <div class="chart-container">
+                        <h5 class="card-title mb-3 text-black font-bold">PLayers Gender Ratio</h5>
+                        <div class="gender-container">
+                            <canvas id="genderChart" width="200" height="200"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card d-flex align-items-center">
+                        <div class="card-body d-flex flex-row justify-content-between w-100">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-person" style="font-size: 50px;"></i>
+                                <div class="d-flex flex-column ms-2">
+                                    <h5 class="card-title mb-0">Players with all 3 checkpoints</h5>
+                                    <p class="card-text mb-0" id="playersWithAllCheckpoints">0</p>
+                                </div>
+                            </div>
+                            <div class="centered">
+                                <a href="#" class="btn btn-link">
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <h5 class="card-title mb-3 text-black">Players Per Checkpoint</h5>
+                        <div class="checkpoint-container">
+                            <canvas id="checkpointChart" width="300" height="130"></canvas>
+                        </div>
+                        
+                    </div>
+
+
+
+
+                </div>
+                
+            </div>
+            
+            </div>
+        </div>
+        <div class="right-content">
+            <div id="leaderboard-header">
+                <h1>Ranking</h1>
+              </div>
+            <div id="leaderboard">
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+
+<script>
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector(".sidebar");
+
+    btn.onclick = function(){
+        sidebar.classList.toggle("active");
+    }
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('DOMContentLoaded event fired');
+        var path = window.location.pathname;
+        var menuLinks = document.querySelectorAll('#menu a');
+        console.log("menu links are", menuLinks);
+
+        menuLinks.forEach(function (link) {
+            console.log('Checking link:', link.getAttribute('href'));
+            if (link.getAttribute('href') === path) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    });
+
+    
+
+
+</script>
+
+</html>

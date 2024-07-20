@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Players</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FIREBASE CONFIG -->
+    <script src="config.js" type="module"></script>
+    <script src="players.js" type="module"></script>
+    <script src="script.js" defer></script>
+
+
+</head>
+<body>
+    <div class = "sidebar">
+        <div class="top">
+            <div class="logo">
+                <img src="logo.png" alt="Logo" class="app-icon">
+                <span class="title">Mother Nature</span>
+            </div>
+            <i class="bi bi-list" id="btn"></i>
+        </div>
+
+        <ul>
+            <li>
+<<<<<<< HEAD
+                <a href="https://curtislow777.github.io/MotherNature/">
+=======
+                <a href="/index.html">
+>>>>>>> parent of afc7666 (wtf)
+                    <i class="bi bi-app-indicator"></i>
+                    <span class="nav-item">Dashboard</span>
+                </a>
+            </li>
+    
+            <li>
+<<<<<<< HEAD
+                <a href="https://curtislow777.github.io/MotherNature/players.html">
+=======
+                <a href="/players.html">
+>>>>>>> parent of afc7666 (wtf)
+                    <i class="bi bi-people"></i>
+                    <span class="nav-item">Players</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <ul class ="tabs">
+                <li data-tab-target="#players" class="active tab" id="header"> Players </li>
+                <li data-tab-target="#new-player"class="tab" id="header"> New Player </li>
+
+            </ul>
+
+            <div class="tab-content">
+                <!-- default active tab -->
+                <div id="players" data-tab-content class ="active">
+                    <h1>Players</h1>
+                    <table class="table table-striped table-bordered table-hover">
+                        
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">User ID</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Date Of Birth</th>
+                                <th scope="col">Gender</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="player-data">
+                            <!-- Your table rows go here -->
+                        </tbody>
+                    </table>    
+                    <div id="image-container">
+                        <h2 id="image-header">Player Images</h2> <!-- Header for the image container -->
+                            <div id="image-content">
+                                <!-- Images and messages will be appended here by the JavaScript function -->
+                            </div>
+                    </div>
+                
+
+                    
+
+                </div>
+
+
+
+
+
+                <div id="new-player" data-tab-content>
+                    <form id="createPlayerForm">
+                        <!-- Existing form groups -->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword">Password</label>
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                            </div>
+                        </div>
+                
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="inputUsername">Username</label>
+                                <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+                            </div>
+                        </div>
+                
+                        <!-- Add a date input to your form -->
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                            <label for="inputDOB">Date of Birth</label>
+                            <input type="date" class="form-control" id="inputDOB" name="inputDOB">
+                            </div>
+                        </div>
+  
+                
+                        <div class="form-row">
+                            <p>Gender</p>
+                            <select class="form-control" id="inputGender">
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+                
+                        <!-- Button placement adjusted -->
+                        <br></br>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <button type="submit" class="btn btn-primary">Create User</button>
+                            </div>
+                        </div>
+                        <div id="signUpErrorMessage" style="color: red;"></div>
+
+                    </form>
+                </div>
+                
+                
+
+                </div> <!-- END OF NEW PLAYER TAB -->
+                
+
+
+            </div><!-- END OF TAB CONTENT -->
+
+
+
+
+
+
+
+        </div>
+    </div>
+    
+</body>
+
+<script>
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector(".sidebar");
+
+    btn.onclick = function(){
+        sidebar.classList.toggle("active");
+    }
+
+</script>
+
+
+</html>
