@@ -547,7 +547,7 @@ function updateLeaderboard(leaderboardData) {
                 tableRow.innerHTML = `
                     <td class="number">${rank}</td>
                     <td class="name">${player.userName}</td>
-                    <td class="points">${player.highScore}${(rank === 1) ? ' <img class="gold-medal" src="/medal.png" alt="gold medal"/>' : ''}</td>
+                    <td class="points">${player.highScore}${(rank === 1) ? ' <img class="gold-medal" src="./medal.png" alt="gold medal"/>' : ''}</td>
                     `;
                 // add the table row to the table.
                 table.appendChild(tableRow);
